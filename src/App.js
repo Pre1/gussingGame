@@ -179,7 +179,7 @@ class App extends React.Component {
                 placeholder={gussedNum ? "Your Guess..." : ''}
                 value={this.state.value}
                 onChange={this.handleChange}
-                disabled={(!gussedNum) && true}
+                disabled={(!gussedNum || this.state.guessed) && true}
               />
 
               <small id="numHelp" className="form-text text-dark">
