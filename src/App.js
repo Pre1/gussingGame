@@ -35,15 +35,10 @@ class App extends React.Component {
     let num = this.state.numOfGuess - 1;
     let val = Number(this.state.value);
 
-    console.log("val", val);
-    console.log("type of val", typeof val);
 
     console.log("random val: ", this.state.randomVal);
-    console.log("type of random val: ", typeof this.state.randomVal);
-    console.log("val === this.state.randomVal: ", val === this.state.randomVal);
 
     if (val === this.state.randomVal) {
-      console.log("========== Set guessed state");
       return this.setState({ guessed: true });
     }
 
@@ -67,12 +62,9 @@ class App extends React.Component {
   };
 
   hint = moreHint => {
-    console.log("moreHint: ", moreHint);
-    console.log("this.state.moreHint: ", this.state.moreHint);
-
+    
     if (moreHint) return this.setState({ moreHint: !this.state.moreHint });
 
-    console.log("hint");
     let hintFlag = this.state.hint[0];
     let compare = this.state.randomVal > 50 ? "greater" : "samaller";
     this.setState({ hint: [!hintFlag, compare] });
@@ -115,8 +107,6 @@ class App extends React.Component {
             </p>
           );
         }
-
-        console.log("=== GUESS ===:", aa);
 
         aa.push(
           <button
